@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: self-healing-selenium
+    env: python
+    runtime: python-3.11
+    buildCommand: bash build.sh
+    startCommand: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --browser.gatherUsageStats=false
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "true"
+      - key: STREAMLIT_BROWSER_GATHER_USAGE_STATS
+        value: "false"
+      - key: GOOGLE_CHROME_BIN
+        value: /usr/bin/google-chrome
+      - key: CHROMEDRIVER_PATH
+        value: /usr/local/bin/chromedriver
