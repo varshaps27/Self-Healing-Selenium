@@ -1,6 +1,0 @@
-selenium
-webdriver-manager
-openai
-beautifulsoup4
-lxml
-pytest
